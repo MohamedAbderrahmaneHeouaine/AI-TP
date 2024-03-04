@@ -1,7 +1,7 @@
 from aima3.logic import *
 from aima3.utils import *
 
-kb = PropKB()
+kb = FolKB()
 kb.tell(expr('Male(Jean)'))
 kb.tell(expr('Male(Fabien)'))
 kb.tell(expr('Male(Jerome)'))
@@ -32,5 +32,5 @@ kb.tell(expr('(Parent(x, y) & Sister(y, z)) ==> Aunt(x, z)'))
 kb.tell(expr('(Parent(x, y) & Parent(z, w) & Sibling(y, z)) ==> Cousin(x, w)'))
 kb.tell(expr('(Parent(x, y)) ==> Ancestor(x, y)'))
 kb.tell(expr('(Parent(x, y) & Ancestor(y, z)) ==> Ancestor(x, z)'))
-
+# kb.tell(expr('(Ancestor(x, z) & Parent(x, y) ) ==> Ancestor(y, z)'))
 print(kb.ask(expr('Ancestor(Jean, Franck)')))
